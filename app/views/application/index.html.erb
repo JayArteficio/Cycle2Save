@@ -1,0 +1,50 @@
+<div class = "container">
+  <div class = "row">
+
+    <div class = "col-md-6">
+      <div class="show">
+        <h1>Welcome <%= @firstname %>!</h1>
+        <img src=<%=@avatar%> alt=user_image id="avatar"></img>
+        <p>save money, bike to work</p>
+        <p> You've commuted <%=@commute_count%> times so far this year. </p>
+        <p> You've logged <%=@total_commute_distance%> kilometers so far this year. </p>
+        <p> You've saved $<%=@money_saved_vs_train%> by not taking the bus so far this year. </p>
+      </div>
+      <div class="show">
+        <p> You've commuted <%=@commute_count%> times so far this year. </p>
+        <p> You've logged <%=@total_commute_distance%> kilometers so far this year. </p>
+        <p> You've saved $<%=@money_saved_vs_train%> by not taking the bus so far this year. </p>
+      </div>
+    </div>
+    <div class = "col-md-6">
+      <div id="bitcoin">
+        <p> </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  <!-- <p> should be an array of commuting distances <%=@commutes%> </p>
+  <p> 1st friend's name <%=@j%> </p>
+  <p> distance of second ride <%=@d%> </p>
+  <p> class of activity (array of hashes)<%=@a%> </p>
+  <p> all friends <%=@allFriends%></p>
+  <p> all distances <%=@allDistances %></p>
+  <p>this is the token: <%= @token %></p>
+  <p>
+  this is the client token? <%= @client %>
+  </br>
+
+  <p>
+  30th activity <%= @thirtyactivity %>
+  </br>
+  count of activities <%= @countofactivity %>
+   -->
