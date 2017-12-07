@@ -10,14 +10,102 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
  @import 'bootstrap';
 
+#brand {
+  font-size: 10px;
+}
 
 #avatar {
   border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hide1 {
+  display: none;
+}
+
+.hide2 {
+  display: none;
+}
+
+.card-title {
+  // display: block;
+  text-align: center;
+}
+
+.navbar-brand {
+  font-size: 48px;
+  margin-bottom: -20px;
+  padding-bottom: -20px;
+  // height: 48px;
+  // width: 193px;
+  // border: 1px solid black;
+}
+
+.appname {
+  color: #111732;
+  // text-shadow: 2px 2px grey;
+}
+.appname:hover {
+  color: blue;
+  text-decoration: none;
+}
+
+#tagline {
+  margin-left: 14px;
+  color: #f1464c;
+  // text-shadow: 2px 2px black;
+}
+.navbar navbar-inverse {
+  padding-top: 0px;
+  margin-top: -30px;
+}
+.navbar-header {
+  margin-left: 50px;
+  margin-top: 0px;
+}
+
+#stravalink {
+  background-color: #fc4c02;
+  color: white;
+  font: bold weight;
+}
+
+#stravalink:hover {
+  color: blue;
+  text-decoration: none;
+  border-radius: 20%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#btn {
+  background-color: #fc4c02;
+  color: white;
+}
+
+#customizebtn {
+  background-color: blue;
+  color: white;
+}
+
+#customizebtn:hover {
+  text-decoration: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+}
+#btn:hover {
+  text-decoration: none;
 }
 
 html {
@@ -28,6 +116,41 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, .3);
+
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, .3);
+}
+.col-md-6 {
+  // padding-right: 100px;
+  // margin-left: -50px;
+  background-color: lightblue;
+}
+
+.col-md-4 {
+  // padding-right: 100px;
+  margin-left: 0px;
+  // background-color: pink;
+}
+
+.red {
+  color: red;
+  font-size: 40px;
+}
+
+#moneyshot {
+  // font-weight: bolder;
+  font-size: 100px;
+  margin-top: 150px;
+  margin-left: 615px;
+  color: #ffe36f;
+  // background-color: black;
 }
 
 #bitcoin {
@@ -36,18 +159,18 @@ body {
   background-position: fixed;
   height: 120px;
   width: 120px;
-  margin-top: 40vh;
-  margin-left: 350px;
-  animation-name:rotate_animation;
-  animation-duration: 15s;
-  animation-delay:0s;
-  animation-iteration-count: infinite;
+  margin-top: -25px;
+  margin-left: 675px;
+  // animation-name:rotate_animation;
+  // animation-duration: 15s;
+  // animation-delay:0s;
+  // animation-iteration-count: infinite;
 }
 
-@keyframes rotate_animation {
-  0% {transform: rotate(360deg);}
-  100% {transform: rotate(0deg);}
-}
+// @keyframes rotate_animation {
+//   0% {transform: rotate(360deg);}
+//   100% {transform: rotate(0deg);}
+// }
 
 
 

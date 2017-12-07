@@ -1,50 +1,120 @@
-<div class = "container">
-  <div class = "row">
 
-    <div class = "col-md-6">
-      <div class="show">
-        <h1>Welcome <%= @firstname %>!</h1>
-        <img src=<%=@avatar%> alt=user_image id="avatar"></img>
-        <p>save money, bike to work</p>
-        <p> You've commuted <%=@commute_count%> times so far this year. </p>
-        <p> You've logged <%=@total_commute_distance%> kilometers so far this year. </p>
-        <p> You've saved $<%=@money_saved_vs_train%> by not taking the bus so far this year. </p>
+<div class="row">
+
+  <div class="col-md-4">
+    <% if @commute_count %>
+      <div class="show1">
+        <div class="card" style="width:400px">
+          <div class="card-body">
+            <img src=<%=@avatar%> alt="user_image" id="avatar"></img>
+            <h3 class="card-title">Great work,
+              <%= @firstname %>!</h3>
+
+            <p>So far this year, you've <b>cycled</b> to work
+              <%=@commute_count%>
+              times and logged
+              <%=@total_commute_distance%>
+              kilometers.</p>
+            <p>
+              That means you've saved:</p> <p>$<%=@money_saved_vs_driving_mid_size%>
+              by leaving the car at home and
+              <strong>$<%=@money_saved_vs_train%></strong>
+              by not taking the skytrain. Not bad for a little fresh air and exercise!</p>
+              <!-- <p>And if you don't own a car, you've saved $<%=@money_saved_vs_owning_mid_size%>!</p> All this in addition to reducing your carbon footprint!</p> -->
+            <!-- <a href="https://www.strava.com" id="stravalink">View on Strava</a> <-->
+            <p>Keep on riding!</p>
+            <div class="btns">
+              <button type="button" class="btn btn-link btn-sm" id="btn">View on Strava</button>
+        <!-- Button trigger modal -->
+              <button type="button" class="btn btn-link btn-sm" id="customizebtn" data-toggle="modal" data-target="#exampleModal">
+                Customize
+              </button>
+            </div>
+
+        <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <form id="user_input_form">
+                  <div class="form-group">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Enter your own commuting costs</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                      <!-- <%= form_tag do %>
+                        <%= label_tag(:zone_1, "1 Zone") %>
+                          <%= radio_button_tag :zone, 1 %>
+                        <%= label_tag(:zone_2, "2 Zone") %>
+                          <%= radio_button_tag :zone, 2 %>
+                        <%= label_tag(:zone_3, "3 Zone") %>
+                          <%= radio_button_tag :zone, 3 %>
+                        <%=submit_tag("Submit")%>
+                      <% end %> -->
+                        <p>Your commuting cost per trip:</p>
+                        <label class="radio-inline"><input type="radio" name="zone" value="1">1 Zone</label>
+                        <label class="radio-inline"><input type="radio" name="zone" value="2">2 Zone</label>
+                        <label class="radio-inline"><input type="radio" name="zone" value="3">3 Zone</label>
+                        <p>Your vehicle type:</p>
+                        <label class="radio-inline"><input type="radio" name="vehicle" value="compact">Compact</label>
+                        <label class="radio-inline"><input type="radio" name="vehicle" value="mid-size">Mid-size</label>
+                        <label class="radio-inline"><input type="radio" name="vehicle" value="SUV">SUV</label>
+                      </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="customizationFormSubmitHandler()" >Submit</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="show">
-        <p> You've commuted <%=@commute_count%> times so far this year. </p>
-        <p> You've logged <%=@total_commute_distance%> kilometers so far this year. </p>
-        <p> You've saved $<%=@money_saved_vs_train%> by not taking the bus so far this year. </p>
-      </div>
-    </div>
-    <div class = "col-md-6">
-      <div id="bitcoin">
-        <p> </p>
-      </div>
+    <% end %>
+    <!-- <div class="hide2">
+      <div class="card" style="width:400px">
+        <div class="card-body">
+          <img src=<%=@avatar%> alt="user_image" id="avatar"></img>
+          <h3 class="card-title">Great work,
+            <%= @firstname %>!</h3>
+          <h1>custom</h1>
+          <p>So far this year, you've <b>biked</b> to work
+            <%=@commute_count%>
+            times and ridden
+            <%=@total_commute_distance%>
+            kilometers.</p>
+          <p>
+            That means you've saved $<%=@money_saved_vs_driving_mid_size%>
+            by leaving the car at home,
+            <strong>$<%=@money_saved_vs_train%></strong>
+            by not taking transit for a 1 zone fare and
+            <b>$<%=@money_saved_vs_train_two_zone%></b>
+            for 2 zones fares. And if you don't own a car, you've saved $<%=@money_saved_vs_owning_mid_size%>! All this in addition to reducing your carbon footprint!</p>
+          <div class="btns">
+           <button type="button" class="btn btn-link btn-sm" id="btn">View on Strava</button>
+          </div>
+        </div>
+      </div> -->
+  </div>
+  <div class="col-md-8">
+    <% if @money_saved_vs_train %>
+      <h1 id="moneyshot">$<%=@money_saved_vs_train%></h1>
+    <% end %>
+    <div id="bitcoin">
+      <p></p>
     </div>
   </div>
+
 </div>
-
-
-
-
-
-
-
-
-
-  <!-- <p> should be an array of commuting distances <%=@commutes%> </p>
-  <p> 1st friend's name <%=@j%> </p>
-  <p> distance of second ride <%=@d%> </p>
-  <p> class of activity (array of hashes)<%=@a%> </p>
-  <p> all friends <%=@allFriends%></p>
-  <p> all distances <%=@allDistances %></p>
-  <p>this is the token: <%= @token %></p>
-  <p>
-  this is the client token? <%= @client %>
-  </br>
-
-  <p>
-  30th activity <%= @thirtyactivity %>
-  </br>
-  count of activities <%= @countofactivity %>
-   -->
+<!-- <script>(function() {
+document.getElementById('customizebtn').addEventListener('submit', event => {
+  event.preventDefault();
+  console.log('Form is submitted!')
+});
+})();</script> -->
+<!-- <p> should be an array of commuting distances <%=@commutes%> </p> <p> 1st friend's name <%=@j%> </p> <p> distance of second ride <%=@d%> </p> <p> class of activity (array of hashes)<%=@a%> </p> <p> all friends <%=@allFriends%></p> <p> all
+distances <%=@allDistances %></p> <p>this is the token: <%= @token %></p> <p> this is the client token? <%= @client %> </br> <p> 30th activity <%= @thirtyactivity %> </br> count of activities <%= @countofactivity %> -->

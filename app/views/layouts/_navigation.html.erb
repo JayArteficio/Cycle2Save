@@ -1,14 +1,17 @@
-<nav class="navbar navbar-inverse">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to 'Cycle2Save', root_path  %>
 
-        <!-- <a class="navbar-brand" href="#">Cycle2Save</a> -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        <%= link_to 'Cycle2Save', root_path, class: 'appname'  %>
+      </div>
+      <p id= "tagline">  save money, bike to work</p>
     </div>
-    <div id="navbar">
-      <ul class="nav navbar-nav pull-right">
-        <li><%= link_to 'Sign In with Strava', sign_in_with_strava_path %></li>
-      </ul>
-    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <%= link_to sign_in_with_strava_path do %>
+        <%= image_tag "strava_btn.png", class: "stravabutton" %>
+      <% end %>
+    </ul>
   </div>
 </nav>
