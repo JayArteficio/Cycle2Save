@@ -31,11 +31,11 @@ skip_before_action :verify_authenticity_token
 
     @total_commute_distance = (@commutes.reduce(0, :+)/1000).round(0)
 
-    @money_saved_vs_train = (@commutes.size * 6.95).round(0)
+    @money_saved_vs_train = (@commutes.size * 3.48).round(0)
 
-    @money_saved_vs_train_two_zone = (@commutes.size * 4.10).round(0)
+    # @money_saved_vs_train_two_zone = (@commutes.size * 4.10).round(0)
 
-    @money_saved_vs_driving_mid_size = (@total_commute_distance * 0.20).round(0)
+    @money_saved_vs_driving_mid_size = (@total_commute_distance * 0.16).round(0)
 
     @money_saved_vs_owning_mid_size = (@total_commute_distance * 0.52).round(0)
 

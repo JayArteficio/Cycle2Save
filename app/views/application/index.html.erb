@@ -10,21 +10,29 @@
             <h3 class="card-title">Great work,
               <%= @firstname %>!</h3>
 
-            <p>So far this year, you've <b>cycled</b> to work
-              <%=@commute_count%>
+            <p>So far this year, you've cycled to work
+              <strong id="@commuteCount"><%=@commute_count%></strong>
               times and logged
-              <%=@total_commute_distance%>
+              <strong id="@totalCommuteDistance"><%=@total_commute_distance%></strong>
               kilometers.</p>
             <p>
-              That means you've saved:</p> <p>$<%=@money_saved_vs_driving_mid_size%>
+              That means you've saved:
+            </p>
+            <p>
+              <strong id="@userSavedNotByDriving">$<%=@money_saved_vs_driving_mid_size%>
+              </strong>
               by leaving the car at home and
-              <strong>$<%=@money_saved_vs_train%></strong>
-              by not taking the skytrain. Not bad for a little fresh air and exercise!</p>
+              <strong id="@userSavedNotByTrain">$<%=@money_saved_vs_train%>
+              </strong>
+              by not taking the skytrain. Not bad for a little fresh air and exercise!
+            </p>
               <!-- <p>And if you don't own a car, you've saved $<%=@money_saved_vs_owning_mid_size%>!</p> All this in addition to reducing your carbon footprint!</p> -->
             <!-- <a href="https://www.strava.com" id="stravalink">View on Strava</a> <-->
             <p>Keep on riding!</p>
             <div class="btns">
-              <button type="button" class="btn btn-link btn-sm" id="btn">View on Strava</button>
+              <button type="button" class="btn btn-link btn-sm" id="btn"><a href="https://www.strava.com" id="stravalink">View on Strava</a></button>
+
+
         <!-- Button trigger modal -->
               <button type="button" class="btn btn-link btn-sm" id="customizebtn" data-toggle="modal" data-target="#exampleModal">
                 Customize
@@ -101,12 +109,12 @@
       </div> -->
   </div>
   <div class="col-md-8">
-    <% if @money_saved_vs_train %>
-      <h1 id="moneyshot">$<%=@money_saved_vs_train%></h1>
-    <% end %>
     <div id="bitcoin">
       <p></p>
     </div>
+    <% if @money_saved_vs_train %>
+      <h1 id="moneyshot">$<%=@money_saved_vs_train%></h1>
+    <% end %>
   </div>
 
 </div>

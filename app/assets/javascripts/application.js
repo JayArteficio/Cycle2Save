@@ -43,10 +43,41 @@ function customizationFormSubmitHandler() {
   var zoneValue = $('input[name=zone]:checked').val();
   var vehicleValue = $('input[name=vehicle]:checked').val();
   // var x = zoneValue * @commute_count;
-  console.log(zoneValue);
   // console.log(zoneValue);
-  console.log(vehicleValue);
+  // // console.log(zoneValue);
+  // console.log(vehicleValue);
+  if (zoneValue == 1) {
+       fareValue = 2.85;
+  } else if (zoneValue == 2) {
+        fareValue = 4.10;
+  } else if (zoneValue == 3){
+        fareValue = 5.60;
+  } else {
+        fareValue = 3.48;
+  }
+ console.log(fareValue);
+
+  let customizedTrainSave ="$"+ Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
+  document.getElementById("@userSavedNotByTrain").innerHTML = customizedTrainSave;
+  document.getElementById("moneyshot").innerHTML = customizedTrainSave;
+  // console.log(x);
+  if (vehicleValue == "compact") {
+       mileageValue = .11;
+  } else if (vehicleValue == "mid-size") {
+        mileageValue = .23;
+  } else if (vehicleValue == "SUV") {
+        mileageValue = .33;
+  } else {
+        mileageValue = .16;
+  }
+  let customizedCarSave ="$"+ Math.round(mileageValue*(document.getElementById("@totalCommuteDistance").innerHTML));
+  document.getElementById("@userSavedNotByDriving").innerHTML = customizedCarSave;
+
+  // var x = document.getElementById("myP").innerHTML;
+  // document.getElementById("demo").innerHTML = x;
+
+  // document.getElementById("@userSavedNotByTrain").innerHTML = "<%=train%>";
   // $("b").replaceWith("<b>x</b>");
-  $( ".hide2" ).removeClass( "hide2" ).addClass( "show2" );
+  // $( ".hide2" ).removeClass( "hide2" ).addClass( "show2" );
   // $( ".show1" ).remove();
 }

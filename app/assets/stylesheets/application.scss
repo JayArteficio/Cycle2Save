@@ -91,6 +91,18 @@
   color: white;
 }
 
+#btn > a {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#btn > a:hover {
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
 #customizebtn {
   background-color: blue;
   color: white;
@@ -127,16 +139,18 @@ body {
 .modal-content {
   background-color: rgba(255, 255, 255, .3);
 }
-.col-md-6 {
+.col-md-8 {
   // padding-right: 100px;
   // margin-left: -50px;
-  background-color: lightblue;
+  // background-color: lightblue;
+  height: 900px;
 }
 
 .col-md-4 {
   // padding-right: 100px;
   margin-left: 0px;
   // background-color: pink;
+
 }
 
 .red {
@@ -147,7 +161,7 @@ body {
 #moneyshot {
   // font-weight: bolder;
   font-size: 100px;
-  margin-top: 150px;
+  margin-top: 50px;
   margin-left: 615px;
   color: #ffe36f;
   // background-color: black;
@@ -159,7 +173,7 @@ body {
   background-position: fixed;
   height: 120px;
   width: 120px;
-  margin-top: -25px;
+  margin-top: 250px;
   margin-left: 675px;
   // animation-name:rotate_animation;
   // animation-duration: 15s;
