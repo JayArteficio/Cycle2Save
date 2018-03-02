@@ -15,11 +15,15 @@ skip_before_action :verify_authenticity_token
     # maximum is only 200...problem if they commute daily
     # can I put a variable like, "this year", instead of hardcoding "2017"
 
+
+
+
+    #How I get this year's rides
     @so_far_this_year_activities =
     @client.list_athlete_activities(:after => Date.parse("2017-1-1").to_time.to_i, :per_page => 200)
 
 
-
+    #How I get the commutes, an array of the commuting distances
     @commutes =[]
     for activity in @so_far_this_year_activities do
       if activity['commute']
@@ -27,8 +31,10 @@ skip_before_action :verify_authenticity_token
       end
     end
 
+    #How I get the number of commutes
     @commute_count = @commutes.size
 
+    #How I get the total distance of all commutes 
     @total_commute_distance = (@commutes.reduce(0, :+)/1000).round(0)
 
     @money_saved_vs_train = (@commutes.size * 3.48).round(0)
