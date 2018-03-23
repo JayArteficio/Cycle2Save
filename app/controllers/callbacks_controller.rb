@@ -34,7 +34,7 @@ skip_before_action :verify_authenticity_token
     #How I get the number of commutes
     @commute_count = @commutes.size
 
-    #How I get the total distance of all commutes 
+    #How I get the total distance of all commutes
     @total_commute_distance = (@commutes.reduce(0, :+)/1000).round(0)
 
     @money_saved_vs_train = (@commutes.size * 3.48).round(0)
