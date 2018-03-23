@@ -57,7 +57,7 @@ function customizationFormSubmitHandler() {
   }
  console.log(fareValue);
 
-  let customizedTrainSave ="$"+ Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
+  var customizedTrainSave ="$"+ Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
   document.getElementById("@userSavedNotByTrain").innerHTML = customizedTrainSave;
   document.getElementById("moneyshot").innerHTML = customizedTrainSave;
   // console.log(x);
@@ -70,7 +70,7 @@ function customizationFormSubmitHandler() {
   } else {
         mileageValue = .16;
   }
-  let customizedCarSave ="$"+ Math.round(mileageValue*(document.getElementById("@totalCommuteDistance").innerHTML));
+  var customizedCarSave ="$"+ Math.round(mileageValue*(document.getElementById("@totalCommuteDistance").innerHTML));
   document.getElementById("@userSavedNotByDriving").innerHTML = customizedCarSave;
 
   // var x = document.getElementById("myP").innerHTML;
