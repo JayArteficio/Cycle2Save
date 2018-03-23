@@ -33,9 +33,9 @@ class CallbacksController < ApplicationController
 
     @money_saved_vs_train_two_zone = (@commutes.size * 4.10).round(2)
 
-    @money_saved_vs_owning_mid_size = (@total_commute_distance * .52).round(2)
+    @money_saved_vs_owning_mid_size = (@total_commute_distance * 0.52).round(2)
 
-    @money_saved_vs_driving_mid_size = (@total_commute_distance * .0834).round(2)
+    @money_saved_vs_driving_mid_size = (@total_commute_distance * 0.0834).round(2)
 
   end
 end
