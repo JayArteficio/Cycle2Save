@@ -42,22 +42,24 @@ function customizationFormSubmitHandler() {
   // console.log('hi');
   var zoneValue = $('input[name=zone]:checked').val();
   var vehicleValue = $('input[name=vehicle]:checked').val();
+
   // var x = zoneValue * @commute_count;
   // console.log(zoneValue);
   // // console.log(zoneValue);
   // console.log(vehicleValue);
   if (zoneValue == 1) {
-       fareValue = 2.85;
+    fareValue = 2.85;
   } else if (zoneValue == 2) {
-        fareValue = 4.10;
-  } else if (zoneValue == 3){
-        fareValue = 5.60;
+    fareValue = 4.10;
+  } else if (zoneValue == 3) {
+    fareValue = 5.60;
   } else {
-        fareValue = 3.48;
-  }
- console.log(fareValue);
+    fareValue = 3.48;
+  };
 
-  var customizedTrainSave ="$"+ Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
+  console.log(fareValue);
+
+  var customizedTrainSave = '$'' + Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
   document.getElementById("@userSavedNotByTrain").innerHTML = customizedTrainSave;
   document.getElementById("moneyshot").innerHTML = customizedTrainSave;
   // console.log(x);
