@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
-  config.strava_api_client_id = "21299"
-  config.strava_api_key = "67a0a31d505da6adf4ce3b0920786df219a7e113"
+  config.strava_api_key = ENV["STRAVA_API_KEY"]
+  config.strava_api_client_id = ENV["STRAVA_API_CLIENT_ID"]
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
 
