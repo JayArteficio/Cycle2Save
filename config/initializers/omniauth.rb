@@ -1,7 +1,7 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
     provider :strava,
-    Rails.application.secrets.strava_api_client_id,
-    Rails.application.secrets.strava_api_key,
+    Rails.application.config.strava_api_client_id,
+    Rails.application.config.strava_api_key,
   scope: 'view_private'
 end
 
