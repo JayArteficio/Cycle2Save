@@ -59,7 +59,7 @@ function customizationFormSubmitHandler() {
 
   console.log(fareValue);
 
-  var customizedTrainSave = '$'' + Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
+  var customizedTrainSave = '$' + Math.round(fareValue*(document.getElementById("@commuteCount").innerHTML));
   document.getElementById("@userSavedNotByTrain").innerHTML = customizedTrainSave;
   document.getElementById("moneyshot").innerHTML = customizedTrainSave;
   // console.log(x);
