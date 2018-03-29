@@ -124,8 +124,8 @@ html {
   height: 100%;
 }
 body {
-  background-image: url('./cyclist.gif');
-  // background-image: url(<%= asset_path 'cyclist.gif' %>);
+  // background-image: url('./cyclist.gif');
+  background-image: url(<%= asset_path 'cyclist.gif' %>);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

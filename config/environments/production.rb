@@ -3,6 +3,8 @@ Rails.application.configure do
   config.strava_api_key = ENV["STRAVA_API_KEY"]
   config.strava_api_client_id = ENV["STRAVA_API_CLIENT_ID"]
 
+  # added these two as per stackoverflow suggestion
+  # https://stackoverflow.com/questions/38658262/heroku-css-background-image-doesnt-work
   config.serve_static_files = true
   config.serve_static_assets = true
   # Verifies that versions and hashed value of the package contents in the project's package.json
