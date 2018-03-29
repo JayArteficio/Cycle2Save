@@ -2,6 +2,9 @@ Rails.application.configure do
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
   config.strava_api_key = ENV["STRAVA_API_KEY"]
   config.strava_api_client_id = ENV["STRAVA_API_CLIENT_ID"]
+
+  config.serve_static_files = true
+  config.serve_static_assets = true
   # Verifies that versions and hashed value of the package contents in the project's package.json
   config.webpacker.check_yarn_integrity = false
 
